@@ -1,31 +1,136 @@
 // DEPENDENCIES
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const { title } = require('process');
+const fs = require('fs');
 
 // DATA
-// TODO: Create an array of questions for user input
-// added spread operator to .prompt
 const questions = [
     {
         type: 'input',
         message: "What is the title of your README?",
         name: "title"
+    },
+    {
+      type: 'input',
+      message: "Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide. What was your motivation? Why did you build this project? What problem does it solve? What did you learn?.",
+      name: "description"
+    },
+    {
+      type: 'input',
+      message: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
+      name: "installation"
+    },
+    {
+      type: 'input',
+      message: "Provide instructions and examples for use. Include screenshots as needed.",
+      name: "usage"
+    },
+    {
+      type: 'input',
+      message: "List your collaborators, if any, with links to their GitHub profiles.If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.If you followed tutorials, include links to those here as well.",
+      name: "credits"
+    },
+    {
+      type: 'checkbox',
+      message: "Which license does your repository use?",
+      name: "license",
+      choices: ["MIT", "Apache license 2.0", "Mozilla Public License 2.0"]
+    },
+    {
+      type: 'input',
+      message: "How can people contribute?",
+      name: "contribution"
+    },
+    {
+      type: 'input',
+      message: "What are the tests that can be run for your application?",
+      name: "tests"
+    },
+    {
+      type: 'input',
+      message: "Please enter your github.",
+      name: "github",
+    },
+    {
+      type: 'input',
+      message: "Please enter your email.",
+      name: "email",
     }
 ];
 
 // FUNCTIONS
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(answers) {
+  const template = `# ${answers.title}
 
-// TODO: Create a function to initialize app
-init() {}
+  ## Description
+  
+  ${answers.description}
+  
+  ## Table of Contents
+  
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  - [How to Contribute](#contribution)
+  - [Tests](#Tests)
+  - [Questions](#Questions)
+  
+  ## Installation
+  
+  ${answers.installation}
+  
+  ## Usage
+  
+  ${answers.usage}
+  
+  To add a screenshot, create an 'assets/images' folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+  
+  ![alt text](assets/images/screenshot.png)
+  
+  ## Credits
+  
+  ${answers.credits}
+  
+  ## License
+  
+  ${answers.license}
+  
+  ---
+  
+  ## How to Contribute
+  
+  ${answers.contribution}
+  
+  ## Tests
+  
+  ${answers.tests}
+  
+  ## Questions
+  
+  You can reach me at [${answers.github}](https://github.com/${answers.github}) or via email at ${answers.email} with any questions regarding this repository.`;
+
+  return template;
+}
+
+function licenseBadge() {
+  if(questions[6].choices[0]) {
+    `${answers.title}`.append(`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`);
+  } if (questions[6].choices[1]) {
+    `${answers.title}`.append(`[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`);
+  } if (questions[6].choices[2]){
+    `${answers.title}`.append(`[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`);
+  }
+}
+
+licenseBadge();
 
 // USER INTERACTION
-inquirer
-  .prompt([...questions]
-    // pass your questions in here
-  )
-  .then((answers) => {
-    // use user feedback for...whatever!
+inquirer.prompt([...questions]).then((answers) => {
+  const readme = writeToFile(answers);
+  fs.writeToFile('README.md', readme, 'utf8', (err) => {
+    if (err) {
+      return console.log(err)
+   }
+   console.log('README created :)')
   })
+})
