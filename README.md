@@ -2,18 +2,19 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+The motivation for this project was to utilize node and the JavaScript features associated with it.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+This project is extremely convenient, as programmers need a README for any application they create and/or deploy. Automating this process through node and JavaScript is not only a great way to streamline the process of deploying future applications but also to apply newly learned concepts to real-world problems.
+
+I learned how to use markdown syntax within JavaScript, originally a very foreign concept to me. I further solidified my understanding of template literals. I also became better acquainted with node and how to find and fix bugs.  
 
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+The usage of this application is relatively straightforward:
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+Once you've initialized inquirer (npm i inquirer@8.2.4) and used npm init, you can use this app. 
+
+Open a new terminal in the index.js file and enter "node index" to begin. Then, answer the questions as they appear. When the questions are fininshed, you will receive a message that your README has been created. Open it and take a look!
 
 ![README code snippet](readme.png)
