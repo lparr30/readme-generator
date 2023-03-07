@@ -1,20 +1,51 @@
-# README Generator
+# w
 
-## Description
+  [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
-The motivation for this project was to utilize node and the JavaScript features associated with it.
-
-This project is extremely convenient, as programmers need a README for any application they create and/or deploy. Automating this process through node and JavaScript is not only a great way to streamline the process of deploying future applications but also to apply newly learned concepts to real-world problems.
-
-I learned how to use markdown syntax within JavaScript, originally a very foreign concept to me. I further solidified my understanding of template literals. I also became better acquainted with node and how to find and fix bugs.  
-
-
-## Usage
-
-The usage of this application is relatively straightforward:
-
-Once you've initialized inquirer (npm i inquirer@8.2.4) and used npm init, you can use this app. 
-
-Open a new terminal in the index.js file and enter "node index" to begin. Then, answer the questions as they appear. When the questions are fininshed, you will receive a message that your README has been created. Open it and take a look!
-
-![README code snippet](readme.png)
+  ## Description
+  
+  w
+  
+  ## Table of Contents
+  
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  - [How to Contribute](#contribution)
+  - [Tests](#Tests)
+  - [Questions](#Questions)
+  
+  ## Installation
+  
+  w
+  
+  ## Usage
+  
+  w
+  
+  To add a screenshot, create an 'assets/images' folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+  
+  ![alt text](assets/images/screenshot.png)
+  
+  ## Credits
+  
+  w
+  
+  ## License
+  
+  Mozilla Public License 2.0
+  
+  ---
+  
+  ## How to Contribute
+  
+  w
+  
+  ## Tests
+  
+  w
+  
+  ## Questions
+  
+  You can reach me at [w](https://github.com/w) or via email at w with any questions regarding this repository.

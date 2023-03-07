@@ -59,7 +59,10 @@ const questions = [
 
 // FUNCTIONS
 function writeToFile(answers) {
+  console.log(typeof answers.license);
   const template = `# ${answers.title}
+
+  ${licenseBadge(answers.license)}
 
   ## Description
   
@@ -112,22 +115,23 @@ function writeToFile(answers) {
   return template;
 }
 
-function licenseBadge() {
-  if(questions[6].choices[0]) {
-    `${answers.title}`.append(`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`);
-  } if (questions[6].choices[1]) {
-    `${answers.title}`.append(`[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`);
-  } if (questions[6].choices[2]){
-    `${answers.title}`.append(`[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`);
+function licenseBadge(bananas) {
+  console.log(bananas);
+  if(bananas == "MIT") {
+    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+  }
+  if(bananas == "Apache license 2.0") {
+    return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+  }
+  if (bananas == "Mozilla Public License 2.0") {
+    return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
   }
 }
-
-licenseBadge();
 
 // USER INTERACTION
 inquirer.prompt([...questions]).then((answers) => {
   const readme = writeToFile(answers);
-  fs.writeToFile('README.md', readme, 'utf8', (err) => {
+  fs.writeFile('README.md', readme, 'utf8', (err) => {
     if (err) {
       return console.log(err)
    }
