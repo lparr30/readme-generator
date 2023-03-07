@@ -88,7 +88,7 @@ function writeToFile(answers) {
   
   To add a screenshot, create an 'assets/images' folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
   
-  ![alt text](assets/images/screenshot.png)
+  ![README sample](./sample-readme.png)
   
   ## Credits
   
@@ -110,7 +110,7 @@ function writeToFile(answers) {
   
   ## Questions
   
-  You can reach me at [${answers.github}](https://github.com/${answers.github}) or via email at ${answers.email} with any questions regarding this repository.`;
+  You can reach me at [github.com/${answers.github}](https://github.com/${answers.github}) or via email at ${answers.email} with any questions regarding this repository.`;
 
   return template;
 }

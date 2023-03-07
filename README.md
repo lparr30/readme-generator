@@ -1,10 +1,11 @@
-# w
+# Professional README Generator
 
-  [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
   
-  w
+  I built this project as a way to learn more about Node and how to implement JavaScript into node. This project was also a way to use inquirer, creatign files via the terminal, and using template literals to create .md or .html files as needed. This was a useful project in learning about the code necessary to complete it, but also in the fact that it will save me time in future projects.
+
   
   ## Table of Contents
   
@@ -18,11 +19,11 @@
   
   ## Installation
   
-  w
+  To use this application, install inquirer by typing npm i inquirer into the terminal.
   
   ## Usage
   
-  w
+  For instructions on how to use this application, please watch the video in this README.
   
   To add a screenshot, create an 'assets/images' folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
   
@@ -30,22 +31,22 @@
   
   ## Credits
   
-  w
+  No collaborators.
   
   ## License
   
-  Mozilla Public License 2.0
+  MIT
   
   ---
   
   ## How to Contribute
   
-  w
+  N/A
   
   ## Tests
   
-  w
+  N/A
   
   ## Questions
   
-  You can reach me at [w](https://github.com/w) or via email at w with any questions regarding this repository.
+  You can reach me at [lparr30](https://github.com/lparr30) or via email at lizajparr@gmail.com with any questions regarding this repository.
